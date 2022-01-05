@@ -14,13 +14,13 @@ app.use(express.static(__dirname + '/public'));
 io.on('connection', (socket) => {
     console.log('nueva conexion: ', socket.id);
 
-    socket.on('client:newnote', (data) => {
-        notes.push({
-            id: uuid(),
-            title: data.title,
-            description: data.description
-        });
+    socket.on('client:newnote', (newNote) => {
+        const note = {...newNote, id: uuid()};
+        console.log(note);
+        notes.push(note);
     })
+
+    socket.emit('server:notes', notes);
 })
 
 server.listen(3000)

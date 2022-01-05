@@ -12,3 +12,9 @@ noteForm.addEventListener('submit', (e) => {
         description: description.value
     });
 });
+
+window.addEventListener('load', (e) => {
+    socket.on('server:notes', (notes) => {
+        console.log(notes);
+    })
+})
