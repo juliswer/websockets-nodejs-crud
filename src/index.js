@@ -11,7 +11,7 @@ app.use(express.static(__dirname + '/public'));
 io.on('connection', (socket) => {
     console.log('nueva conexion: ', socket.id);
 
-    socket.emit('ping')
+    
 })
 
 server.listen(3000)
