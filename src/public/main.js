@@ -7,5 +7,8 @@ const description = document.querySelector('#description');
 noteForm.addEventListener('submit', (e) => {
     e.preventDefault();
 
-    socket.emit('client:newnote');
+    socket.emit('client:newnote', {
+        title: title.value,
+        description: description.value
+    });
 });

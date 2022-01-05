@@ -11,7 +11,9 @@ app.use(express.static(__dirname + '/public'));
 io.on('connection', (socket) => {
     console.log('nueva conexion: ', socket.id);
 
-    
+    socket.on('client:newnote', (data) => {
+        console.log(data);
+    })
 })
 
 server.listen(3000)
