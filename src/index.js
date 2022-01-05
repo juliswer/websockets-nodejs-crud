@@ -18,9 +18,8 @@ io.on('connection', (socket) => {
         const note = {...newNote, id: uuid()};
         console.log(note);
         notes.push(note);
+        socket.emit('server:newnote', note);
     })
-
-    socket.emit('server:notes', notes);
 })
 
 server.listen(3000)

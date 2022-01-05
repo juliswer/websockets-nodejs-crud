@@ -11,10 +11,8 @@ noteForm.addEventListener('submit', (e) => {
         title: title.value,
         description: description.value
     });
-});
 
-window.addEventListener('load', (e) => {
-    socket.on('server:notes', (notes) => {
-        console.log(notes);
+    socket.on('server:newnote', (note) => {
+        console.log(note);
     })
-})
+});
