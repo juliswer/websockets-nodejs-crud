@@ -7,6 +7,6 @@ const saveNote = (title, description) => {
     });
 }
 
-socket.on("server:newnote", noteUI);
+socket.on("server:newnote", appendNote);
 
 socket.on('server:loadnotes', renderNotes);

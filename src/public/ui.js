@@ -29,3 +29,7 @@ const renderNotes = (notes) => {
         notesList.appendChild(noteUI(note));
     });
 }
+
+const appendNote = note => {
+    notesList.append(noteUI(note));
+}
