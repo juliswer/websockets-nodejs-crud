@@ -1,6 +1,6 @@
 const notesList = document.querySelector('#notes');
 
-const appendNote = note => {
+const noteUI = note => {
 
     const div = document.createElement('div');
 
@@ -26,6 +26,6 @@ const appendNote = note => {
 
 const renderNotes = (notes) => {
     notes.forEach(note => {
-        notesList.appendChild(appendNote(note));
+        notesList.appendChild(noteUI(note));
     });
 }
