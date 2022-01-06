@@ -6,8 +6,8 @@ const appendNote = note => {
         <div class="d-flex justify-content-between">
             <h1 class="h3 card-title">${note.title}</h1>
             <div>
-                <button class="btn btn-danger">Delete</button>
-                <button class="btn btn-secondary">Update</button>
+                <button class="btn btn-danger" data-id="${note.id}">Delete</button>
+                <button class="btn btn-secondary" data-id="${note.id}">Update</button>
             </div>
         </div>
         <p>${note.description}</p>
