@@ -14,3 +14,7 @@ const appendNote = note => {
     </div>
     `;
 }
+
+const loadNotes = (notes) => {
+    notes.forEach(note => appendNote(note));
+}

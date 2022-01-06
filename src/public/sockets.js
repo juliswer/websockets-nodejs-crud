@@ -8,3 +8,5 @@ const saveNote = (title, description) => {
 }
 
 socket.on("server:newnote", appendNote);
+
+socket.on('server:loadnotes', notes => loadNotes(notes));

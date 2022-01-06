@@ -14,6 +14,8 @@ app.use(express.static(__dirname + '/public'));
 io.on('connection', (socket) => {
     console.log('nueva conexion: ', socket.id);
 
+    socket.emit('server:loadnotes', notes);
+
     socket.on('client:newnote', (newNote) => {
         const note = {...newNote, id: uuid()};
         console.log(note);
