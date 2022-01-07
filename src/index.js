@@ -3,7 +3,7 @@ import {Server as WebSocketServer} from 'socket.io';
 import http from 'http';
 import {v4 as uuid} from 'uuid';
 
-const notes = [];
+let notes = [];
 
 const app = express();
 const server = http.createServer(app);
@@ -21,6 +21,11 @@ io.on('connection', (socket) => {
         console.log(note);
         notes.push(note);
         socket.emit('server:newnote', note);
+    })
+
+    socket.on('client:deletenote', (noteId) => {
+        notes = notes.filter(note => note.id !== noteId);
+        console.log(notes);
     })
 })
 

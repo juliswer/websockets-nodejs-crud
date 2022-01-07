@@ -17,8 +17,11 @@ const noteUI = note => {
     </div>
     `;
 
-    const btnDelete = div.querySelector('delete')
-    console.log(btnDelete);
+    const btnDelete = div.querySelector('.delete')
+    
+    btnDelete.addEventListener('click', () => {
+        deleteNote(btnDelete.dataset.id)
+    })
 
     return div;
 
