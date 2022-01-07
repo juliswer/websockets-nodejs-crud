@@ -43,7 +43,7 @@ io.on('connection', (socket) => {
             return note;
         })
 
-        socket.emit('server:loadnotes', notes);
+        io.emit('server:loadnotes', notes);
     })
 })
 
