@@ -11,6 +11,10 @@ const deleteNote = (id) => {
     socket.emit('client:deletenote', id);
 }
 
+const updateNote = (id) => {
+    socket.emit('client:updatenote', id);
+}
+
 socket.on("server:newnote", appendNote);
 
 socket.on('server:loadnotes', renderNotes);

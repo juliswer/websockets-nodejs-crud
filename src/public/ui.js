@@ -10,7 +10,7 @@ const noteUI = note => {
             <h1 class="h3 card-title">${note.title}</h1>
             <div>
                 <button class="btn btn-danger delete" data-id="${note.id}">Delete</button>
-                <button class="btn btn-secondary" data-id="${note.id}">Update</button>
+                <button class="btn btn-secondary update" data-id="${note.id}">Update</button>
             </div>
         </div>
         <p>${note.description}</p>
@@ -21,6 +21,12 @@ const noteUI = note => {
     
     btnDelete.addEventListener('click', () => {
         deleteNote(btnDelete.dataset.id)
+    })
+
+    const btnUpdate = div.querySelector('.update')
+
+    btnUpdate.addEventListener('click', () => {
+        updateNote(btnUpdate.dataset.id)
     })
 
     return div;

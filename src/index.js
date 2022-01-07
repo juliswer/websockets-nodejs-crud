@@ -27,6 +27,10 @@ io.on('connection', (socket) => {
         notes = notes.filter(note => note.id !== noteId);
         socket.emit('server:loadnotes', notes);
     })
+
+    socket.on('client:updatenote', (noteId) => {
+        console.log(noteId);
+    })
 })
 
 server.listen(3000)
