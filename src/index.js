@@ -25,7 +25,7 @@ io.on('connection', (socket) => {
 
     socket.on('client:deletenote', (noteId) => {
         notes = notes.filter(note => note.id !== noteId);
-        socket.emit('server:loadnotes', notes);
+        io.emit('server:loadnotes', notes);
     })
     
     socket.on('client:getnote', (noteId) => {
