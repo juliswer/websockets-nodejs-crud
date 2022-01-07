@@ -22,3 +22,7 @@ const updateNote = (id) => {
 socket.on("server:newnote", appendNote);
 
 socket.on('server:loadnotes', renderNotes);
+
+socket.on('server:selectednote', data => {
+    console.log(data);
+})

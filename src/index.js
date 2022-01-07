@@ -33,7 +33,8 @@ io.on('connection', (socket) => {
     })
 
     socket.on('client:getnote', (noteId) => {
-        console.log(noteId);
+        const note = notes.find(note => note.id === noteId);
+        socket.emit('server:selectednote', note);
     })
 })
 
