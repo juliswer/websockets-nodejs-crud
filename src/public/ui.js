@@ -26,7 +26,7 @@ const noteUI = note => {
     const btnUpdate = div.querySelector('.update')
 
     btnUpdate.addEventListener('click', () => {
-        updateNote(btnUpdate.dataset.id)
+        getNote(btnUpdate.dataset.id)
     })
 
     return div;

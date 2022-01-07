@@ -31,6 +31,10 @@ io.on('connection', (socket) => {
     socket.on('client:updatenote', (noteId) => {
         console.log(noteId);
     })
+
+    socket.on('client:getnote', (noteId) => {
+        console.log(noteId);
+    })
 })
 
 server.listen(3000)
