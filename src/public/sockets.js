@@ -15,8 +15,12 @@ const getNote = (id) => {
     socket.emit('client:getnote', id);
 }
 
-const updateNote = (id) => {
-    socket.emit('client:updatenote', id);
+const updateNote = (id, title, description) => {
+    socket.emit('client:updatenote', {
+        id,
+        title,
+        description
+    });
 }
 
 socket.on("server:newnote", appendNote);
