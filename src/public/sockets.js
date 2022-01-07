@@ -23,6 +23,12 @@ socket.on("server:newnote", appendNote);
 
 socket.on('server:loadnotes', renderNotes);
 
-socket.on('server:selectednote', data => {
-    console.log(data);
+socket.on('server:selectednote', note => {
+    const title = document.querySelector('#title');
+    const description = document.querySelector('#description');
+
+    title.value = note.title
+    description.value = note.description
+
+    savedID = note.id;
 })

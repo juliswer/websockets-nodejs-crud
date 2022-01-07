@@ -1,5 +1,7 @@
 const notesList = document.querySelector('#notes');
 
+let savedID = '';
+
 const noteUI = note => {
 
     const div = document.createElement('div');
