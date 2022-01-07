@@ -28,6 +28,7 @@ const noteUI = note => {
 }
 
 const renderNotes = (notes) => {
+    notesList.innerHTML = '';
     notes.forEach(note => {
         notesList.appendChild(noteUI(note));
     });
